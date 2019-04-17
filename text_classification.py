@@ -2,17 +2,38 @@ from __future__ import absolute_import, division, print_function
 
 import tensorflow as tf
 from tensorflow import keras
-
+from keras.datasets import cifar10
+from keras.datasets import imdb
+from keras.datasets import reuters
 import numpy as np
 
 print(tf.__version__)
 
-imdb = keras.datasets.imdb
+# imdb = keras.datasets.imdb
+
+## For IMDB - texc_classification.py
 
 (train_data, train_labels), (test_data, test_labels) = imdb.load_data(num_words=10000)
 print("Training entries: {}, labels: {}".format(len(train_data), len(train_labels)))
 print(train_data[0])
 len(train_data[0]), len(train_data[1])
+
+
+## For Reuters - reuters_mlp.py
+print('Loading data...')
+(x_train, y_train), (x_test, y_test) = reuters.load_data(num_words=max_words,
+                                                         test_split=0.2)
+print(len(x_train), 'train sequences')
+print(len(x_test), 'test sequences')
+
+
+## For CIFAR10 - cifar10_cnn.py
+
+# The data, split between train and test sets:
+(x_train, y_train), (x_test, y_test) = cifar10.load_data()
+print('x_train shape:', x_train.shape)
+print(x_train.shape[0], 'train samples')
+print(x_test.shape[0], 'test samples')
 
 # A dictionary mapping words to an integer index
 word_index = imdb.get_word_index()
