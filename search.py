@@ -10,6 +10,8 @@ from keras.datasets import reuters
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation
 from keras.preprocessing.text import Tokenizer
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 
 # Do we wanna keep these params?
 max_words = 1000
