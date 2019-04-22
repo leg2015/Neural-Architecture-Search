@@ -116,7 +116,7 @@ else:
                                      batch_size=batch_size),
                         epochs=epochs,
                         validation_data=(x_test, y_test),
-                        workers=4)
+                        workers=4, steps_per_epoch=5)
 
 # Save model and weights
 if not os.path.isdir(save_dir):
