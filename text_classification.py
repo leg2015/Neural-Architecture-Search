@@ -75,7 +75,7 @@ history = model.fit(partial_x_train,
 
 results = model.evaluate(test_data, test_labels)
 
-print(results)
+print("MODEL SCORE",results)
 
 history_dict = history.history
 history_dict.keys()

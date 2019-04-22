@@ -4,7 +4,7 @@ from keras.models import Sequential # a linear stack of neural network layers
 from keras.layers import Dense, Dropout, Activation, Flatten #core layers
 from keras.layers import Convolution2D, MaxPooling2D #CNN layers
 from keras.utils import np_utils #utilities
-from matplotlib import pyplot as plt
+#from matplotlib import pyplot as plt
 from keras.datasets import mnist
 
 # Load pre-shuffled MNIST data into train and test sets
