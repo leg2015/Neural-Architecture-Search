@@ -42,6 +42,7 @@ print(len(x_test), 'test sequences')
 
 num_classes = np.max(y_train) + 1
 print(num_classes, 'classes')
+print(y_train)
 
 print('Vectorizing sequence data...')
 tokenizer = Tokenizer(num_words=max_words)
