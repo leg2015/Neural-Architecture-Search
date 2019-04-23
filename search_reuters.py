@@ -73,12 +73,13 @@ def evaluateNetworks(parentPop):
 
 
 def createChildPop(parentPop):
-    sortedParent = sorted(parentPop, key=lambda fitness: fitness[1][1], reverse=True)
+    #sortedParent = sorted(parentPop, key=lambda fitness: fitness[1][1], reverse=True)
     childPop = []
     for i in range(lambda_):
-        childPop.append(sortedParent[i][0])
+        childPop.append(parentPop[i][0])
     for i in range(lambda_, len(parentPop)):
-        childPop.append([random.sample(range(len(act_list))), random.sample(0, 1), random.sample(range(len(act_list)))])
+        childPop.append((act_list[random.randint(0,len(act_list)-1)],random.random(),act_list[random.randint(0,len(act_list)-1)])) #makes a random child with one network
+        #childPop.append([random.sample(range(len(act_list))), random.sample(0, 1), random.sample(range(len(act_list)))])
     return childPop
 
 
@@ -122,16 +123,20 @@ for i in range(pop_size):
 for i in range(num_gens):
     parent_pop_evaluated = evaluateNetworks(parent_pop)
     sortedParent = sorted(
-        parent_pop, key=lambda fitness: fitness[1][1], reverse=True)
-    elites.append((sortedParent[0]), i)
+        parent_pop_evaluated, key=lambda fitness: fitness[1][1], reverse=True)
+    elites.append((sortedParent[0], i))
     parent_pop = createChildPop(parent_pop_evaluated)
 
 # print elite from every print_it gen
-i = 0
-while (i < len(elites)):
-    print("elite of gen " + str(i) + " with architecture of: in act - " + str(elites[0][i][0][0]) + ", dropout - " + str(
-        elites[0][i][0][1]) + ", out act - " + str(elites[0][i][0][2]) + " has accuracy of " + str(elites[0][i][1][1]))
-    i += print_rate
-sortedElites = sorted(elites, key=lambda score: curr[0][1][1], reverse=True)
-print("best network overall is " + str(sortedElites[0][0]) + " with an accuracy of " + str(
-    sortedElites[0][1], " and on generation " + str(sortedElites[1])))
+sortedElites = sorted(elites, key=lambda score: score[0][1][1], reverse=True)
+print('SORTEDELITES:', sortedElites)
+champion = sortedElites[0]
+bestNetwork = champion[0][0]
+print('bestNetwork', bestNetwork)
+print('champion',champion)
+bestAcc = champion[0][1][1]
+chamGen = champion[1]
+
+print("best network overall is ", bestNetwork)
+print(" with an accuracy of ",bestAcc)
+print(" and on generation ", + chamGen)
