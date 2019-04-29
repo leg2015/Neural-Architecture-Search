@@ -23,7 +23,7 @@ num_classes = 10
 # Do we wanna keep these params?
 # max_words = 1000
 batch_size = 32
-epochs = 5
+epochs = 1
 pop_size = 2  # change this to 3
 lambda_ = 1
 sigma = 1.0
@@ -145,7 +145,7 @@ for i in range(num_gens):
     parent_pop_evaluated = evaluateNetworks(parent_pop)
     sortedParent = sorted(
         parent_pop_evaluated, key=lambda fitness: fitness[1][1], reverse=True)
-    elites.append((sortedParent[0]), i)
+    elites.append((sortedParent[0], i))
     parent_pop = createChildPop(parent_pop_evaluated)
 
 # print elite from every print_it gen
