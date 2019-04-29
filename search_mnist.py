@@ -89,6 +89,7 @@ def makeModel(network):
                     activation=network[1],
                     input_shape=input_shape))
     model.add(Dropout(network[2]))
+    model.add(Flatten())
     model.add(Dense(128, activation=network[3]))
     model.add(Dropout(network[4]))
     model.add(Dense(num_classes, activation=network[5]))
@@ -106,6 +107,7 @@ def evaluateNetworks(parentPop):
 
 def trainModel(model, x_train, y_train, x_test, y_test):
 
+    print("x test is ", x_test, "and y test is ", y_test)
     model.compile(loss=keras.losses.categorical_crossentropy,
                 optimizer=keras.optimizers.Adadelta(),
                 metrics=['accuracy'])
