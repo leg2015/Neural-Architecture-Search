@@ -31,6 +31,7 @@ default_act = 'linear'
 parent_pop = []
 parent_pop_evaluated = []
 elites = []
+totalResults = {}
 
 # Setting up data to be useable by the networks
 print('Loading data...')
@@ -79,6 +80,7 @@ def createChildPop(parentPop):
         childPop.append(parentPop[i][0])
     for i in range(lambda_, len(parentPop)):
         childPop.append((act_list[random.randint(0,len(act_list)-1)],random.random(),act_list[random.randint(0,len(act_list)-1)])) #makes a random child with one network
+        # [1st activation, dropout, 2nd activation]
         #childPop.append([random.sample(range(len(act_list))), random.sample(0, 1), random.sample(range(len(act_list)))])
     return childPop
 
@@ -140,3 +142,25 @@ chamGen = champion[1]
 print("best network overall is ", bestNetwork)
 print(" with an accuracy of ",bestAcc)
 print(" and on generation ", + chamGen)
+
+
+# saves results as a csv
+
+download_dir = "reuters_elites_results.csv"  # where you want the file to be downloaded to
+
+csv = open(download_dir, "w")
+#"w" indicates that you're writing strings to the file
+
+columnTitleRow = "generation, 1st_act, dropout, 2nd_act, score, accuracy\n"
+csv.write(columnTitleRow)
+
+for elite in elites:
+    generation = elite[1]
+    # network_arch = elite[0][0]
+    act_1 = elite[0][0][0]
+    dropout = elite[0][0][1]
+    act_2 = elite[0][0][2]
+    score = elite[0][1][0]
+    accuracy = elite[0][1][1]
+    row = str(generation) + "," + str(act_1) + "," + str(dropout) + "," + str(act_2) + "," + str(score) + "," + str(accuracy) + "\n"
+    csv.write(row)

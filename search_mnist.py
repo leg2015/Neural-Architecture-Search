@@ -24,10 +24,10 @@ num_classes = 10
 # max_words = 1000
 batch_size = 32
 epochs = 5
-pop_size = 2  # change this to 3
+pop_size = 5  # change this to 3
 lambda_ = 1
 sigma = 1.0
-num_gens = 2
+num_gens = 20
 print_rate = 5
 
 # GLOBAL PARAMETERS
@@ -107,7 +107,7 @@ def evaluateNetworks(parentPop):
 
 def trainModel(model, x_train, y_train, x_test, y_test):
 
-    print("x test is ", x_test, "and y test is ", y_test)
+    # print("x test is ", x_test, "and y test is ", y_test)
     model.compile(loss=keras.losses.categorical_crossentropy,
                 optimizer=keras.optimizers.Adadelta(),
                 metrics=['accuracy'])
@@ -145,7 +145,7 @@ for i in range(num_gens):
     parent_pop_evaluated = evaluateNetworks(parent_pop)
     sortedParent = sorted(
         parent_pop_evaluated, key=lambda fitness: fitness[1][1], reverse=True)
-    elites.append((sortedParent[0]), i)
+    elites.append((sortedParent[0], i))
     parent_pop = createChildPop(parent_pop_evaluated)
 
 # print elite from every print_it gen
@@ -161,3 +161,31 @@ chamGen = champion[1]
 print("best network overall is ", bestNetwork)
 print(" with an accuracy of ",bestAcc)
 print(" and on generation ", + chamGen)
+
+
+# saves results as a csv
+
+# where you want the file to be downloaded to
+download_dir = "mnist_elites_results.csv"
+
+csv = open(download_dir, "w")
+#"w" indicates that you're writing strings to the file
+# [kernelsize, 1st activation, 1st dropout, 2nd activation, 2nd dropout, 3rd activation]
+
+columnTitleRow = "generation, 1st activation, 1st dropout, 2nd activation, 2nd dropout, 3rd activation, score, accuracy\n"
+csv.write(columnTitleRow)
+
+for elite in elites:
+    generation = elite[1]
+    # network_arch = elite[0][0]
+    act_1 = elite[0][0][1]
+    drop_1 = elite[0][0][2]
+    act_2 = elite[0][0][3]
+    drop_2 = elite[0][0][4]
+    act_3 = elite[0][0][5]
+    score = elite[0][1][0]
+    accuracy = elite[0][1][1]
+    row = str(generation) + "," + str(act_1) + "," + str(drop_1) + \
+        "," + str(act_2) + "," + str(drop_2) + "," + str(act_3) + "," + \
+        str(score) + "," + str(accuracy) + "\n"
+    csv.write(row)
