@@ -3,3 +3,4 @@ Final project for CSC-424. We are using Keras to generate neural networks that a
 
 
 See this page: https://github.com/markdtw/awesome-architecture-search
+csv page: http://stanford.edu/~mgorkove/cgi-bin/rpython_tutorials/Writing_Data_to_a_CSV_With_Python.php

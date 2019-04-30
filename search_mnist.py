@@ -25,6 +25,7 @@ num_classes = 10
 batch_size = 32
 epochs = 5
 pop_size = 5  # change this to 3
+
 lambda_ = 1
 sigma = 1.0
 num_gens = 20
