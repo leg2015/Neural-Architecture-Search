@@ -13,11 +13,6 @@ source venv
 pip install keras , tensorflow-gpu
 clone github repo
 
-
-# Project Title
-
-One Paragraph of project description goes here
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -25,32 +20,35 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 What things you need to install the software and how to install them
-
+1. Install [Python](https://www.python.org/downloads/) (we have been developing with 3.6.7)
+2. Install a virtual environment for the project (optional)
+Navigate to the directory you wish to have the copy of the project
 ```
-Give examples
+pip3 install virtualenv
+virtualenv venv
+source venv/bin/activate (to activate the virtual environment)
+deactivate (to exit virtual environment, but don't deactivate before installing steps 3-5)
 ```
+3. Install [Keras](https://keras.io/#installation)
+`pip3 install keras`
+4. Install [TensorFlow](https://www.tensorflow.org/install)
+`pip3 install tensorflow`
+5. Install MatPlot
+`pip3 install matplotlib`
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
+1. Navigate to the directory you wish to clone the project in a terminal
+2. Activate the virtual environment if you set one up (instructions above)
+3. Clone the repository using the URL given on [this page](https://github.com/leg2015/Neural-Architecture-Search)
+`git clone URL`
 ## Running the tests
 
-Explain how to run the automated tests for this system
+### Reuters Dataset
+`python3 search_reuters.py`
+
+### MNIST Dataset
+`python3 search_mnist.py`
 
 ### Break down into end to end tests
 
@@ -88,9 +86,9 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* [Lauren Gillespie](https://github.com/leg2015)
+* [Elyssa Sliheet](https://github.com/elyssasliheet)
+* [Sara Boyd](https://github.com/kayakingCellist)
 
 ## License
 
