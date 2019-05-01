@@ -128,22 +128,7 @@ for i in range(num_gens):
         parent_pop_evaluated, key=lambda fitness: fitness[1][1], reverse=True)
     elites.append((sortedParent[0], i))
     parent_pop = createChildPop(parent_pop_evaluated)
-
-# print elite from every print_it gen
-sortedElites = sorted(elites, key=lambda score: score[0][1][1], reverse=True)
-print('SORTEDELITES:', sortedElites)
-champion = sortedElites[0]
-bestNetwork = champion[0][0]
-print('bestNetwork', bestNetwork)
-print('champion',champion)
-bestAcc = champion[0][1][1]
-chamGen = champion[1]
-
-print("best network overall is ", bestNetwork)
-print(" with an accuracy of ",bestAcc)
-print(" and on generation ", + chamGen)
-
-
+    print("generation " + str(i) + "is done ")
 # saves results as a csv
 
 download_dir = "reuters_elites_results.csv"  # where you want the file to be downloaded to
@@ -164,3 +149,22 @@ for elite in elites:
     accuracy = elite[0][1][1]
     row = str(generation) + "," + str(act_1) + "," + str(dropout) + "," + str(act_2) + "," + str(score) + "," + str(accuracy) + "\n"
     csv.write(row)
+
+
+ 
+# print elite from every print_it gen
+sortedElites = sorted(elites, key=lambda score: score[0][1][1], reverse=True)
+print('SORTEDELITES:', sortedElites)
+champion = sortedElites[0]
+bestNetwork = champion[0][0]
+print('bestNetwork', bestNetwork)
+print('champion',champion)
+bestAcc = champion[0][1][1]
+chamGen = champion[1]
+
+print("best network overall is ", bestNetwork)
+print(" with an accuracy of ",bestAcc)
+print(" and on generation ", + chamGen)
+
+
+   

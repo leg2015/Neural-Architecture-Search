@@ -24,11 +24,11 @@ num_classes = 10
 # max_words = 1000
 batch_size = 32
 epochs = 5
-pop_size = 5  # change this to 3
+pop_size = 3  # change this to 3
 
 lambda_ = 1
 sigma = 1.0
-num_gens = 20
+num_gens = 5
 print_rate = 5
 
 # GLOBAL PARAMETERS
@@ -148,22 +148,7 @@ for i in range(num_gens):
         parent_pop_evaluated, key=lambda fitness: fitness[1][1], reverse=True)
     elites.append((sortedParent[0], i))
     parent_pop = createChildPop(parent_pop_evaluated)
-
-# print elite from every print_it gen
-sortedElites = sorted(elites, key=lambda score: score[0][1][1], reverse=True)
-print('SORTEDELITES:', sortedElites)
-champion = sortedElites[0]
-bestNetwork = champion[0][0]
-print('bestNetwork', bestNetwork)
-print('champion',champion)
-bestAcc = champion[0][1][1]
-chamGen = champion[1]
-
-print("best network overall is ", bestNetwork)
-print(" with an accuracy of ",bestAcc)
-print(" and on generation ", + chamGen)
-
-
+    print("generation " + str(i) + " is done") 
 # saves results as a csv
 
 # where you want the file to be downloaded to
@@ -190,3 +175,5 @@ for elite in elites:
         "," + str(act_2) + "," + str(drop_2) + "," + str(act_3) + "," + \
         str(score) + "," + str(accuracy) + "\n"
     csv.write(row)
+
+
