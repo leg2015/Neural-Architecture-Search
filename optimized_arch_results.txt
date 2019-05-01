@@ -26,11 +26,19 @@ best network overall is  ('relu', 0.6664791216014222, 'softmax')
  with an accuracy of  0.8032056990204809
  and on generation  1
 
-
 final result of mnist default architecture:
+0	linear	0	linear	0	linear	7.18061158218384	0.3924
+
+
+
+final result of mnist original architecture:
 
 Test loss: 0.07010265367181855
 Test accuracy: 0.9787
 
 
-final result of mnist original architecture:
+final result of mnist original optimized architecture:
+
+Test loss: 0.03865868706087931
+Test accuracy: 0.9866
+
