@@ -33,7 +33,7 @@ deactivate (to exit virtual environment, but don't deactivate before installing 
 `pip3 install keras`
 4. Install [TensorFlow](https://www.tensorflow.org/install)
 `pip3 install tensorflow`
-5. Install MatPlot
+5. Install [MatPlotLib](https://matplotlib.org/)
 `pip3 install matplotlib`
 
 ### Installing
@@ -45,44 +45,22 @@ deactivate (to exit virtual environment, but don't deactivate before installing 
 ## Running the tests
 
 ### Reuters Dataset
-`python3 search_reuters.py`
+The Reuters dataset is a collection of text newswires, feeds of news and magazine articles, from Reuters in 1987. The dataset has a over 46 topics, or categories, that the articles can be characterized under. More information about the Reuters dataset can be found [here](https://archive.ics.uci.edu/ml/datasets/Reuters-21578+Text+Categorization+Collection).
+
+To train the Reuters dataset, run the following command: `python3 search_reuters.py`
+
+We drew inspiration for our network model from [TensorFlow](https://www.tensorflow.org/tutorials/keras/basic_classification) and [Keras](https://keras.io/getting-started/sequential-model-guide/) tutorials.
+
 
 ### MNIST Dataset
-`python3 search_mnist.py`
+The MNIST dataset is a collection of 70,000 grayscale handwritten digits. This is a popular dataset becasue it is the first dataset that a deep neural network was able to perform human levels of accuracy with LeNet. More information regarding MNIST can be found [here](http://yann.lecun.com/exdb/mnist/).
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+To trian the MNIST dataset, run the following command: `python3 search_mnist.py`
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* [Keras](https://keras.io/)
+* [TensorFlow](https://www.tensorflow.org/)
 
 ## Authors
 
@@ -92,11 +70,9 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see our [LICENSE.md](https://github.com/leg2015/Neural-Architecture-Search/blob/master/LICENSE) for details
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+We would like to thank our professor, [Dr. Schrum](https://people.southwestern.edu/~schrum2/), for teaching AI this semester.
 
