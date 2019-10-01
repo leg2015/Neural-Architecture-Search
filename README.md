@@ -1,17 +1,5 @@
 # Neural-Architecture-Search
-Final project for CSC-424. We are using Keras to generate neural networks that are trained in a supervised fashion on data sets. We will develop a method to explore the space of hyperparameters defining both the network architecture and training procedure to improve performance.
-
-
-See this page: https://github.com/markdtw/awesome-architecture-search
-csv page: http://stanford.edu/~mgorkove/cgi-bin/rpython_tutorials/Writing_Data_to_a_CSV_With_Python.php
-
-
-
-got a setup on bryan's gpu rig in the physics lab
-installed pip, created a venv to hold keras, tensorflow
-source venv
-pip install keras , tensorflow-gpu
-clone github repo
+Neural architecture search is a new, popular technique for automatically discovering successful deep neural architectures for a wide variety of domains. Neural architecture search has been implemented with many different types of search algorithms, including Q-learning and evolutionary strategies. We implemented neural architecture search using a simple mu + lambda evolutionary strategy to optimize accuracy on the popular Reuters and MNIST datasets. We evolve architectures with significantly better performance than the baseline architecture found [here](https://github.com/markdtw/awesome-architecture-search) and comparable performance to hand-optimized architectures of similar size. In future work, we hope to also evolve the layers of the networks along with tuing the hyperparameters.
 
 ## Getting Started
 
@@ -55,7 +43,7 @@ We drew inspiration for our network model from [TensorFlow](https://www.tensorfl
 ### MNIST Dataset
 The MNIST dataset is a collection of 70,000 grayscale handwritten digits. This is a popular dataset becasue it is the first dataset that a deep neural network was able to perform human levels of accuracy with LeNet. More information regarding MNIST can be found [here](http://yann.lecun.com/exdb/mnist/).
 
-To trian the MNIST dataset, run the following command: `python3 search_mnist.py`
+To train the MNIST dataset, run the following command: `python3 search_mnist.py`
 
 ## Built With
 
@@ -64,9 +52,9 @@ To trian the MNIST dataset, run the following command: `python3 search_mnist.py`
 
 ## Authors
 
-* [Lauren Gillespie](https://github.com/leg2015)
-* [Elyssa Sliheet](https://github.com/elyssasliheet)
-* [Sara Boyd](https://github.com/kayakingCellist)
+* [@leg2015](https://github.com/leg2015)
+* [@elyssasliheet](https://github.com/elyssasliheet)
+* [@kayakingCellist](https://github.com/kayakingCellist)
 
 ## License
 
@@ -74,5 +62,5 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 
 ## Acknowledgments
 
-We would like to thank our professor, [Dr. Schrum](https://people.southwestern.edu/~schrum2/), for teaching AI this semester.
-
+Thanks to @markdtw for providing the base code we used to implement the neural networks found [here](https://github.com/markdtw/awesome-architecture-search). Also thanks to @mgorkove for the lovely tutorial on how to write data to a CSV with Python found  [here](http://stanford.edu/~mgorkove/cgi-bin/rpython_tutorials/Writing_Data_to_a_CSV_With_Python.php).
+ We would also like to thank our professor, [Dr. Schrum](https://people.southwestern.edu/~schrum2/), for his assistance on the project details. Finally, we'd like to thank [@kwg](https://github.com/kwg) for letting us use (and occasionally break) his linux setup.
