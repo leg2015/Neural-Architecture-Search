@@ -45,9 +45,6 @@ The MNIST dataset is a collection of 70,000 grayscale handwritten digits. This i
 
 To train the MNIST dataset, run the following command: `python3 search_mnist.py`
 
-## Results 
-![Voluntunity landing page](https://github.com/leg2015/CSCapstone19Volunteers/blob/master/voluntunity_landing.png "Voluntunity landing page")
-
 ## Built With
 
 * [Keras](https://keras.io/)
