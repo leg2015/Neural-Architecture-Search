@@ -62,5 +62,5 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 
 ## Acknowledgments
 
-Thanks to @markdtw for providing the base code we used to implement the neural networks found [here](https://github.com/markdtw/awesome-architecture-search). Also thanks to [@mgorkove](https://github.com/mgorkove) for the lovely tutorial on how to write data to a CSV with Python found  [here](http://stanford.edu/~mgorkove/cgi-bin/rpython_tutorials/Writing_Data_to_a_CSV_With_Python.php).
+Thanks to [@markdtw](https://github.com/markdtw) for providing the base code we used to implement the neural networks found [here](https://github.com/markdtw/awesome-architecture-search). Also thanks to [@mgorkove](https://github.com/mgorkove) for the lovely tutorial on how to write data to a CSV with Python found  [here](http://stanford.edu/~mgorkove/cgi-bin/rpython_tutorials/Writing_Data_to_a_CSV_With_Python.php).
  We would also like to thank our professor, [Dr. Schrum](https://people.southwestern.edu/~schrum2/), for his assistance on the project details. Finally, we'd like to thank [@kwg](https://github.com/kwg) for letting us use (and occasionally break) his linux setup.
