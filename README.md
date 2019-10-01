@@ -8,25 +8,25 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 What things you need to install the software and how to install them
-1. Install [Python](https://www.python.org/downloads/) (we have been developing with 3.6.7)
-2. Install a virtual environment for the project (optional)
-Navigate to the directory you wish to have the copy of the project
+1. Navigate to the directory you wish to have the copy of the project
+2. Install a virtual environment for the project (optional, but highly recommended) 
 ```
 pip3 install virtualenv
 virtualenv venv
 source venv/bin/activate (to activate the virtual environment)
 deactivate (to exit virtual environment, but don't deactivate before installing steps 3-5)
 ```
-3. Install [Keras](https://keras.io/#installation)
+3. Install [Python](https://www.python.org/downloads/) (we have been developing with 3.6.7)
+4. Install [Keras](https://keras.io/#installation)
 `pip3 install keras`
-4. Install [TensorFlow](https://www.tensorflow.org/install)
+5. Install [TensorFlow](https://www.tensorflow.org/install)
 `pip3 install tensorflow`
-5. Install [MatPlotLib](https://matplotlib.org/)
+6. Install [MatPlotLib](https://matplotlib.org/)
 `pip3 install matplotlib`
 
-### Installing
+### Installing the Repo
 
-1. Navigate to the directory you wish to clone the project in a terminal
+1. Navigate to the directory you wish to clone the project in a terminal, or the directory that holds your virtual environment
 2. Activate the virtual environment if you set one up (instructions above)
 3. Clone the repository using the URL given on [this page](https://github.com/leg2015/Neural-Architecture-Search)
 `git clone URL`
@@ -44,6 +44,9 @@ We drew inspiration for our network model from [TensorFlow](https://www.tensorfl
 The MNIST dataset is a collection of 70,000 grayscale handwritten digits. This is a popular dataset becasue it is the first dataset that a deep neural network was able to perform human levels of accuracy with LeNet. More information regarding MNIST can be found [here](http://yann.lecun.com/exdb/mnist/).
 
 To train the MNIST dataset, run the following command: `python3 search_mnist.py`
+
+## Results 
+![Voluntunity landing page](https://github.com/leg2015/CSCapstone19Volunteers/blob/master/voluntunity_landing.png "Voluntunity landing page")
 
 ## Built With
 
